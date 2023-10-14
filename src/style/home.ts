@@ -1,6 +1,30 @@
 import styled from "styled-components";
 
-export const Title = styled.h1`
+export const Container = styled.div`
+	height: auto;
+	width: 95%;
+	margin: 2%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	border: 0.15rem solid ${props=>props.theme.roxo};
+`
+export const Title = styled.div`
+	height: auto;
+	width: 95%;
+	margin: 1%;
+	padding: 0.5%;
+	border-bottom: 0.15rem solid ${props=>props.theme.roxo};
 	font-size: 3rem;
-	color: ${props=>props.theme.roxo};
+	color: ${props=>props.theme.branco};
+`
+export const Text = styled.div`
+	height: auto;
+	width: 95%;
+	margin: 1%;
+	padding: 0.5%;
+	border: 0.15rem solid ${props=>props.theme.roxo};
+	font-size: 1.25rem;
+	color: ${props=>props.theme.branco};
 `
