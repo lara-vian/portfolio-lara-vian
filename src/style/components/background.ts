@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const Background = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
 	background-color: ${props=>props.theme.preto};
 	height: 100vh;
 	width: 100vw;
@@ -10,14 +14,14 @@ export const NavBar = styled.nav`
 	flex-direction: row;
 	justify-content: left;
 	align-items: center;
-	height: 12.5%;
+	height: auto;
 	width: 100%;
 	background-color: ${props=>props.theme.preto};
 	border-bottom: 0.15rem solid ${props=>props.theme.roxo};
 `
 export const Button = styled.button<{$active:boolean}>`
 	display: inline-block;
-	margin: 1rem;
+	margin: 1rem 0.5rem 0.5rem 1rem;
 	padding: 0.9rem 1.8rem;
 	font-size: 1.5rem;
 	color: ${props=> props.$active ? props.theme.preto : props.theme.branco};
