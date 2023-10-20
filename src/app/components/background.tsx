@@ -59,6 +59,11 @@ export default function Background({children}:PropsWithChildren){
 				</S.Button>
 			</S.NavBar>
 			{children}
+			<S.Footer>
+				Criado por Lara Vian Steinbach 
+				<br/>
+				- 20/10/2023 -
+			</S.Footer>
 		</S.Background>
 	)
 }

@@ -23,7 +23,7 @@ export const TextContainer = styled.div`
 	height: auto;
 	width: 95%;
 	margin: 1%;
-	padding: 3%;
+	padding: 2%;
 	border: 0.15rem solid ${props=>props.theme.roxo};
 `
 export const Text = styled.p`

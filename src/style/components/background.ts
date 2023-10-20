@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 export const Background = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: start;
 	background-color: ${props=>props.theme.preto};
 	height: 100vh;
 	width: 100vw;
+	overflow-x: hidden;
+	overflow-y: scroll;
 `
 export const NavBar = styled.nav`
 	display: flex;
@@ -51,4 +49,13 @@ export const Button = styled.button<{$active:boolean}>`
 	&:hover{
 		color: ${props=> props.theme.preto};
 	}
+`
+export const Footer = styled.footer`
+	display: flex;
+	justify-content: center;
+	align-items: end;
+	text-align: center;
+	border-top: 0.15rem solid ${props=>props.theme.roxo};
+	color: ${props=>props.theme.branco};
+	font-size: 1rem;
 `
