@@ -1,5 +1,12 @@
 export const devices = {
-	"monitor": 1024,
-	"tablet": 768,
-	"mobile": 640
+	"desktop": {
+		"min":1024
+	},
+	"tablet": {
+		"min": 767,
+		"max": 1023
+	},
+	"mobile": {
+		"max": 766
+	}
 }
