@@ -23,7 +23,7 @@ export const Name = styled.div`
 `
 export const HeaderContainer = styled.div`
 	height: auto;
-	width: 95%;
+	width: 100%;
 	margin-bottom: 2%;
 	padding: 1%;
 	border-bottom: 0.15rem solid ${props=>props.theme.roxo};
