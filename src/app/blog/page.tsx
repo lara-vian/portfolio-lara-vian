@@ -28,11 +28,14 @@ export default function Blog(){
 		.then(json=>setData(json))
 	})
 	return(
-		<Background>
-			<S.Container>
-				{data?.map((post, index)=>Post(post, index, router))}
-			</S.Container>
-		</Background>
+		<>
+			<title>Blog</title>
+			<Background>
+				<S.Container>
+					{data?.map((post, index)=>Post(post, index, router))}
+				</S.Container>
+			</Background>
+		</>	
 	)
 }
 const Post = (post:IPost, id:number, router:AppRouterInstance) =>{

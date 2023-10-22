@@ -31,33 +31,35 @@ export default function Project({ params }: { params: { id: number } }){
 	}
 	
 	return(
-		<Background>
-			<S.Container>
-				<S.TextContainer>
-					<S.HeaderContainer>
-						<S.Name>{project?.name}</S.Name>
-						<S.Description>{project?.description}</S.Description>
-					</S.HeaderContainer>
-						{project?.content.map((text, index)=>{
-							return(
-								text.img 
-								? 
-								<>
-									<S.Img src={text.text} key={index}/>
-									<br/>
-								</>
-								
-								:
-								<>
-									<S.Text key={index}>{text.text}</S.Text>
-									<br/>
-								</>
-								
-								)
-						})}
-				</S.TextContainer>
-			</S.Container>
-		</Background>
-		
+		<>
+			<title>{project?.name}</title>
+			<Background>
+				<S.Container>
+					<S.TextContainer>
+						<S.HeaderContainer>
+							<S.Name>{project?.name}</S.Name>
+							<S.Description>{project?.description}</S.Description>
+						</S.HeaderContainer>
+							{project?.content.map((text, index)=>{
+								return(
+									text.img 
+									? 
+									<>
+										<S.Img src={text.text} key={index}/>
+										<br/>
+									</>
+									
+									:
+									<>
+										<S.Text key={index}>{text.text}</S.Text>
+										<br/>
+									</>
+									
+									)
+							})}
+					</S.TextContainer>
+				</S.Container>
+			</Background>
+		</>
 	)
 }

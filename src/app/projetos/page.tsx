@@ -26,11 +26,14 @@ export default function Projetos(){
 		.then(json=>setData(json))
 	})
 	return(
-		<Background>
-			<S.Container>
-				{data?.map((project, index)=>Post(project, index, router))}
-			</S.Container>
-		</Background>
+		<>
+			<title>Projetos</title>
+			<Background>
+				<S.Container>
+					{data?.map((project, index)=>Post(project, index, router))}
+				</S.Container>
+			</Background>
+		</>
 	)
 }
 const Post = (

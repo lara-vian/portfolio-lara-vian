@@ -55,7 +55,7 @@ export const Img = styled.img`
 export const Button = styled.button`
 	display: inline-block;
 	margin: 1%;
-	width: 60px;
+	width: 70px;
 	height: 40px;
 	font-size: 1.5rem;
 	border: 3px solid ${props=> props.theme.ciano};
