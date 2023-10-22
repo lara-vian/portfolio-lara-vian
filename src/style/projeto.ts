@@ -17,7 +17,7 @@ export const Name = styled.div`
 	font-size: 2rem;
 	color: ${props=>props.theme.branco};
 	@media (max-width: ${devices.mobile.max}px){
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 	}
 `
 export const HeaderContainer = styled.div`
@@ -61,7 +61,7 @@ export const Text = styled.p`
 	font-size: 1.5rem;
 	color: ${props=>props.theme.branco};
 	@media (max-width: ${devices.mobile.max}px){
-		font-size: 1rem;
+		font-size: .75rem;
 	}
 `
 export const Img = styled.img`

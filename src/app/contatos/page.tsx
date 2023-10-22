@@ -23,13 +23,6 @@ export default function Contato(){
 								/lara-vian
 							</S.Anchor>
 						</S.Text>
-						<br/>
-						<S.Text>E-mail: 
-							<S.Anchor 
-							href="mailto:lara.vsteinbach@gmail.com">
-								lara.vsteinbach@gmail.com
-							</S.Anchor>
-						</S.Text>
 					</S.TextContainer>
 				</S.Container>
 			</Background>
