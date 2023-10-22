@@ -1,9 +1,13 @@
 'use client'
 import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import Background from "../components/background"
 import * as S from "../../style/projetos"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime"
 
 interface IProject{
+	id: number,
 	name: string,
 	description: string,
 	content:[
@@ -14,6 +18,7 @@ interface IProject{
 	]
 }
 export default function Projetos(){
+	const router = useRouter()
 	const [data, setData] = useState<IProject[]>()
 	useEffect(()=>{
 		fetch("https://lara-vian.github.io/data/projects.json")
@@ -23,37 +28,45 @@ export default function Projetos(){
 	return(
 		<Background>
 			<S.Container>
-				{data 
-				? 
-				data.map((project, index)=>Post(project, index))
-				: 
-				<S.Name>
-					Sem Posts
-				</S.Name>
-				}
+				{data?.map((project, index)=>Post(project, index, router))}
 			</S.Container>
 		</Background>
 	)
 }
-const Post = (project: IProject, key:number) =>{
+const Post = (
+	project: IProject, 
+	id:number, 
+	router: AppRouterInstance) =>{
 	return(
-			<S.TextContainer key={key}>
-				<S.TitleContainer >
-					<S.Name>{project.name}</S.Name>
-					<S.Description>{project.description}</S.Description>
-				</S.TitleContainer>
+			<S.TextContainer key={id}>
+				<S.HeaderContainer key={id}>
+					<S.TitleContainer key={id}>
+						<S.Name key={id}>{project.name}</S.Name>
+						<S.Button
+							key={id}
+							onClick={()=>{
+								router.push(`/projetos/${id}`)
+							}}
+						>
+							<S.Icon 
+							key={id}
+							icon={faArrowRight}/>
+						</S.Button>
+					</S.TitleContainer>
+					<S.Description key={id}>{project.description}</S.Description>
+				</S.HeaderContainer>
 				{project.content.map((text)=>{
 					return(
 					text.img 
 					? 
 					<>
-						<S.Img src={text.text}/>
+						<S.Img key={id} src={text.text}/>
 						<br/>
 					</>
 					
 					:
 					<>
-						<S.Text>{text.text}</S.Text>
+						<S.Text key={id}>{text.text}</S.Text>
 						<br/>
 					</>
 					
