@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../divices";
 
 export const Background = styled.div`
 	background-color: ${props=>props.theme.preto};
@@ -48,6 +49,39 @@ export const Button = styled.button<{$active:boolean}>`
 	}
 	&:hover{
 		color: ${props=> props.theme.preto};
+	}
+	@media (max-width: ${devices.mobile.max}px) {
+		display: inline-block;
+		margin: 1rem 0.5rem 0.5rem 1rem;
+		padding: 0.25rem 0.5rem;
+		font-size: 1rem;
+		color: ${props=> props.$active ? props.theme.preto : props.theme.branco};
+		border: 3px solid ${props=> props.theme.roxo};
+		cursor: pointer;
+		position: relative;
+		background-color: ${props=> props.$active ? props.theme.roxo : "transparent"};
+		text-decoration: none;
+		overflow: hidden;
+		z-index: 1;
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: ${props=> props.theme.roxo};
+			transform: translateX(-100%);
+			transition: all .3s;
+			z-index: -1;
+		}
+		
+		&:hover::before {
+			transform: translateX(0);
+		}
+		&:hover{
+			color: ${props=> props.theme.preto};
+		}
 	}
 `
 export const Footer = styled.footer`

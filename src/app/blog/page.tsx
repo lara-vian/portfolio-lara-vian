@@ -42,16 +42,14 @@ const Post = (post:IPost, id:number, router:AppRouterInstance) =>{
 	return(
 			<S.TextContainer key={id}>
 				<S.TitleContainer key={id}>
-					<S.Title key={id}>{post.title}</S.Title>
-					<S.Data key={id}>{post.data}</S.Data>
+					<S.Title>{post.title}</S.Title>
+					<S.Data>{post.data}</S.Data>
 					<S.Button
-							key={id}
 							onClick={()=>{
 								router.push(`/blog/${id}`)
 							}}
 						>
 							<S.Icon 
-							key={id}
 							icon={faArrowRight}/>
 						</S.Button>
 				</S.TitleContainer>
@@ -66,7 +64,7 @@ const Post = (post:IPost, id:number, router:AppRouterInstance) =>{
 					
 					:
 					<>
-						<S.Text key={id}>{text.text}</S.Text>
+						<S.Text key={id} >{text.text}</S.Text>
 						<br/>
 					</>
 					

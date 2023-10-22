@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import { devices } from "./divices";
 
 export const Container = styled.ul`
 	height: auto;
@@ -17,6 +18,9 @@ export const Title = styled.div`
 	margin-bottom: 1%;
 	font-size: 2rem;
 	color: ${props=>props.theme.branco};
+	@media (max-width: ${devices.mobile.max}px){
+		font-size: 1rem;
+	}
 `
 export const TitleContainer = styled.div`
 	height: auto;
@@ -35,6 +39,9 @@ export const Data = styled.div`
 	margin-bottom: 1%;
 	font-size: 1rem;
 	color: ${props=>props.theme.ciano};
+	@media (max-width: ${devices.mobile.max}px){
+		font-size: .75rem;
+	}
 `
 export const TextContainer = styled.li`
 	height: auto;
@@ -46,18 +53,24 @@ export const TextContainer = styled.li`
 export const Text = styled.p`
 	font-size: 1.5rem;
 	color: ${props=>props.theme.branco};
+	@media (max-width: ${devices.mobile.max}px) {
+		font-size: 0.75rem;
+	}
 `
 export const Img = styled.img`
 	background-color: transparent;
 	height: 20%;
 	width: 20%;
+	@media (max-width: ${devices.mobile.max}px){
+		height: 50%;
+		width: 50%;
+	}
 `
 export const Button = styled.button`
 	display: inline-block;
 	margin: 1%;
 	width: 70px;
 	height: 40px;
-	font-size: 1.5rem;
 	border: 3px solid ${props=> props.theme.ciano};
 	cursor: pointer;
 	position: relative;
@@ -77,9 +90,12 @@ export const Button = styled.button`
 		transition: all .3s;
 		z-index: -1;
 	}
-	
 	&:hover::before {
 		transform: translateX(0);
+	}
+	@media (max-width: ${devices.mobile.max}px){
+		width: 60px;
+		height: 30px;
 	}
 `
 export const Icon = styled(FontAwesomeIcon)`
